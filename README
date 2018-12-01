@@ -1,0 +1,10 @@
+dan.kovalsky, hila_dag
+Dan Kovalsky (304957913), Hila Dagan (203815048)
+EX: 5
+
+To run the project you can use the attached cpp file SimpleTest, or to write new tests.
+This project make mapping between phisycal adresses to virtual adresses.
+We use cpp Vectors to simulate the physical memory (sizes can be changed in MemoryConstants.h),
+and hierarchical page tables to map between the virtual memory to the simulated Physical memory.
+
+
