@@ -7,4 +7,20 @@ This project make mapping between phisycal adresses to virtual adresses.
 We use cpp Vectors to simulate the physical memory (sizes can be changed in MemoryConstants.h),
 and hierarchical page tables to map between the virtual memory to the simulated Physical memory.
 
+test example:
+page, frame = 2 (1 bit)
+PM = 16 (4 bits, 8 frames)
+VM = 32 (5 bits. 16 pages)
+Tree depth = 4 ((5-1)/1)
+root of PM always in frame 0
+
+When there is call VMwrite(13,3) - we need write 3 into address 01101.
+so we need to write 3 to page 6 (0110) on offset (1).
+to find page 6 we start from root, at offset 0,
+since the value there is zero, we need to create the table in
+the next frame, and change the root.
+now the same issue with offset 1 and 1 and 0.
+and now, after moving Tree depth times, we arrive to page 6 PM location.
+so we restore into frame 4 in PM the frame 6 in the hard drive.
+and we now can write 3 to the 1001 (frame 4 - offset 1)
 
